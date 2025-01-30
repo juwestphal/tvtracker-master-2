@@ -1,0 +1,726 @@
+{
+	"info": {
+		"_postman_id": "7491fac5-d3ed-43ce-8f85-4fbe508ab9fe",
+		"name": "Movies WatchList Documentation",
+		"description": "# 📄 Get started here\n\nThis template contains a boilerplate for documentation that you can quickly customize and reuse.\n\n## 🔖 How to use this template\n\n- Replace the content given brackets (()) with your API's details.\n- Tips are formatted in `codespan` - feel free to read and remove them.\n    \n\n---\n\n`Start with a brief overview of what your API offers.`\n\nThe ((product name)) provides many API products, tools, and resources that enable you to ((add product value here)).\n\n`You can also list the APIs you offer, link to the relevant pages, or do both in this section.`\n\n## **Getting started guide**\n\n`List the steps or points required to start using your APIs. Make sure to cover everything required to reach success with your API as quickly as possible.`\n\nTo start using the ((add APIs here)), you need to -\n\n`The points given below are from The Postman API's documentation. You can reference it to write your own getting started guide.`\n\n- You must use a valid API Key to send requests to the API endpoints. You can get your API key from Postman's [integrations dashboard](https://go.postman.co/settings/me/api-keys).\n- The API has [rate and usage limits](https://learning.postman.com/docs/developer/postman-api/postman-api-rate-limits/).\n- The API only responds to HTTPS-secured communications. Any requests sent via HTTP return an HTTP 301 redirect to the corresponding HTTPS resources.\n- The API returns request responses in JSON format. When an API request returns an error, it is sent in the JSON response as an error key.\n    \n\n## Authentication\n\n`Add details on the authorization keys/tokens required, steps that cover how to get them, and the relevant error codes.`\n\nThe ((product name)) API uses ((add your API's authorization type)) for authentication.\n\n`The details given below are from the Postman API's documentation. You can reference it to write your own authentication section.`\n\nPostman uses API keys for authentication. You can generate a Postman API key in the [API keys](https://postman.postman.co/settings/me/api-keys) section of your Postman account settings.\n\nYou must include an API key in each request to the Postman API with the X-Api-Key request header.\n\n### Authentication error response\n\nIf an API key is missing, malformed, or invalid, you will receive an HTTP 401 Unauthorized response code.\n\n## Rate and usage limits\n\n`Use this section to cover your APIs' terms of use. Include API limits, constraints, and relevant error codes, so consumers understand the permitted API usage and practices.`\n\n`The example given below is from The Postman API's documentation. Use it as a reference to write your APIs' terms of use.`\n\nAPI access rate limits apply at a per-API key basis in unit time. The limit is 300 requests per minute. Also, depending on your plan, you may have usage limits. If you exceed either limit, your request will return an HTTP 429 Too Many Requests status code.\n\nEach API response returns the following set of headers to help you identify your use status:\n\n| Header | Description |\n| --- | --- |\n| `X-RateLimit-Limit` | The maximum number of requests that the consumer is permitted to make per minute. |\n| `X-RateLimit-Remaining` | The number of requests remaining in the current rate limit window. |\n| `X-RateLimit-Reset` | The time at which the current rate limit window resets in UTC epoch seconds. |\n\n### 503 response\n\nAn HTTP `503` response from our servers indicates there is an unexpected spike in API access traffic. The server is usually operational within the next five minutes. If the outage persists or you receive any other form of an HTTP `5XX` error, [contact support](https://support.postman.com/hc/en-us/requests/new/).\n\n### **Need some help?**\n\n`Add links that customers can refer to whenever they need help.`\n\nIn case you have questions, go through our tutorials ((link to your video or help documentation here)). Or visit our FAQ page ((link to the relevant page)).\n\nOr you can check out our community forum, there’s a good chance our community has an answer for you. Visit our developer forum ((link to developer forum)) to review topics, ask questions, and learn from others.\n\n`You can also document or add links to libraries, code examples, and other resources needed to make a request.`",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31668253"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Gets information about the authenticated user."
+					},
+					"response": [
+						{
+							"name": "Successful Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.getpostman.com/me",
+									"protocol": "https",
+									"host": [
+										"api",
+										"getpostman",
+										"com"
+									],
+									"path": [
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": 12345678,\n        \"username\": \"taylor-lee\",\n        \"email\": \"taylor.lee@example.com\",\n        \"fullName\": \"Taylor Lee\",\n        \"avatar\": \"https://example.com/user/r5u9qpvmujfjf6lbqmga.jpg\",\n        \"isPublic\": true\n    },\n    \"operations\": [\n        {\n            \"name\": \"mock_usage\",\n            \"limit\": 1000000,\n            \"usage\": 110276,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"monitor_request_runs\",\n            \"limit\": 10000000,\n            \"usage\": 1141750,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"api_usage\",\n            \"limit\": 1000000,\n            \"usage\": 16240,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"custom_domains\",\n            \"limit\": 25,\n            \"usage\": 25,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"serverless_requests\",\n            \"limit\": 10000,\n            \"usage\": 0,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"integrations\",\n            \"limit\": 5000,\n            \"usage\": 1018,\n            \"overage\": 0\n        },\n        {\n            \"name\": \"cloud_agent_requests\",\n            \"limit\": 1000000,\n            \"usage\": 1615,\n            \"overage\": 0\n        }\n    ]\n}"
+						},
+						{
+							"name": "Rate Limit Exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.getpostman.com/me",
+									"protocol": "https",
+									"host": [
+										"api",
+										"getpostman",
+										"com"
+									],
+									"path": [
+										"me"
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"rateLimited\",\n    \"message\": \"Rate limit exceeded. Please retry after 1669048687\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add movie as favorite",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzZmNGI4NDYzYjI4ZTlkNTdmNzNiMzMiLCJlbWFpbCI6Im1hcmlhZG9lQGVtYWlsLmNvbSIsImlhdCI6MTczNTM0NzUzOSwiZXhwIjoxNzM1MzUxMTM5fQ.gK7c9Sp3q501uaTCk-FwgeqTWcAAqXgFNDMDVdKftYs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movieId\": \"676d77884b1f7f63f901af8b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/users/676f4b8463b28e9d57f73b33/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"676f4b8463b28e9d57f73b33",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/users/6758c1cb848c99033562351d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"6758c1cb848c99033562351d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mariadoe3@email.com\",\n    \"password\": \"jai7asMha21\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Maria Doe\",\n    \"email\": \"mariadoe3@email.com\",\n    \"password\": \"jai7asMha21\",\n    \"profile\": \"user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzZmNGI4NDYzYjI4ZTlkNTdmNzNiMzMiLCJlbWFpbCI6Im1hcmlhZG9lQGVtYWlsLmNvbSIsImlhdCI6MTczNTM0NzUzOSwiZXhwIjoxNzM1MzUxMTM5fQ.gK7c9Sp3q501uaTCk-FwgeqTWcAAqXgFNDMDVdKftYs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/users/676f4b8463b28e9d57f73b33",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"676f4b8463b28e9d57f73b33"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "### Get All Users\n\nThe **GET** `/api/users` endpoint returns all registered users in an array.\n\nResponse example:\n\n``` json\n`\n[\n    {\n        \"_id\": \"67576b3637ba9fd091b3e9e5\",\n        \"name\": \"John Doe\",\n        \"email\": \"johndoe@email.com\",\n        \"password\": \"jai7asMha21\",\n        \"profile\": \"admin\",\n        \"favoriteMovies\": [\n            \"67576a5daf8cd565e6c078a0\"\n        ],\n        \"createdAt\": \"2024-12-09T22:12:06.377Z\",\n        \"__v\": 1\n    }\n]\n\n ```\n\nThe **POST** `/api/users` endpoint creates a new user. The `id` is automatically generated.\n\nThe payload should look like this:\n\n``` json\n`\n{\n    \"name\": \"John Doe\",\n    \"email\": \"johndoe@email.com\",\n    \"password\": \"jai7asMha21\",\n    \"profile\": \"admin\",\n }\n\n ```\n\nThe **PUT** `/api/users/:id/favorites` endpoint edit a movie id to the User object.\n\nThe payload should look like this:\n\n``` json\n`\n{\n    \"movieId\": \"3434234234234213\",\n }\n\n ```\n\nThe **DELETE** `/api/users/:id` endpoint removes a user by id.\n\nPossible responses:\n\nIf successful:\n\n``` json\n`\n{\n    \"message\": \"User deleted successfully\",\n}\n\n ```\n\nIf error:\n\n``` json\n`\n{\n    \"message\": \"Error deleting User\",\n}\n\n ```\n\nIf id not found:\n\n``` json\n`\n{\n    \"message\": \"User not found\",\n}\n\n ```"
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Get all movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get movies by filters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/movies?genero=action&plataformas=netflix",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "genero",
+											"value": "action"
+										},
+										{
+											"key": "plataformas",
+											"value": "netflix"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Add a new movie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Transformers 2\",\n    \"synopsis\": \"Um filme de carros que se transformam\",\n    \"posterPath\": \"https://google.com\",\n    \"genres\": [\"action\", \"race\"],\n    \"duration\": \"3h\",\n    \"cast\": [\"Selena Gomez\"],\n    \"streamingPlatforms\": [\"Netflix\", \"Disney+\"],\n    \"isWatched\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete movie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/movies/67585d137243a7864d34e5f6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"movies",
+								"67585d137243a7864d34e5f6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit movie by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"posterPath\": \"https://netflix.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/movies/676d7c369a6ad6a21577eff9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"movies",
+								"676d7c369a6ad6a21577eff9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get movie by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/movies/676d7fed1a419d680a0a2aa9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"movies",
+								"676d7fed1a419d680a0a2aa9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"67576b3637ba9fd091b3e9e5\",\n    \"comment\": \"Assistiria novamente! Recomendo!\",\n    \"rating\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/movies/6758bf19145127c9072918ec/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"movies",
+								"6758bf19145127c9072918ec",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "### Get All Movies\n\nThe **GET** `/api/movies` endpoint returns all added movies in an array.\n\nResponse example:\n\n``` json\n`\n[\n    {\n        \"_id\": \"677066d853791666f2cd8406\",\n        \"title\": \"Transformers 2\",\n        \"synopsis\": \"Um filme de carros que se transformam\",\n        \"posterPath\": \"https://google.com\",\n        \"genres\": [\n            \"action\",\n            \"race\"\n        ],\n        \"duration\": \"3h\",\n        \"cast\": [\n            \"Selena Gomez\"\n        ],\n        \"streamingPlatforms\": [\n            \"Netflix\",\n            \"Disney+\"\n        ],\n        \"isWatched\": false,\n        \"releaseDate\": \"2024-12-28T21:00:08.928Z\",\n        \"__v\": 0\n    }\n]\n\n ```\n\nThe **POST** `/api/movies` endpoint creates a new movie. The `id` is automatically generated.\n\nThe payload should look like this:\n\n``` json\n{\n    \"title\": \"Transformers 2\",\n    \"synopsis\": \"Um filme de carros que se transformam\",\n    \"posterPath\": \"https://google.com\",\n    \"genres\": [\"action\", \"race\"],\n    \"duration\": \"3h\",\n    \"cast\": [\"Selena Gomez\"],\n    \"streamingPlatforms\": [\"Netflix\", \"Disney+\"],\n    \"isWatched\": false\n}\n\n ```\n\nThe **PUT** `/api/movies/:id` endpoint edit a movie id to the Movie object.\n\nThe payload should look like this:\n\n``` json\n{\n    \"posterPath\": \"https://netflix.com\"\n}\n\n ```\n\nThe **DELETE** `/api/movies/:id` endpoint removes a movie by id.\n\nPossible responses:\n\nIf successful:\n\n``` json\n`\n{\n    \"message\": \"Movie deleted successfully\",\n}\n\n ```\n\nIf error:\n\n``` json\n`\n{\n    \"message\": \"Error deleting Movie\",\n}\n\n ```\n\nIf id not found:\n\n``` json\n`\n{\n    \"message\": \"Movie not found\",\n}\n\n ```"
+		},
+		{
+			"name": "Series",
+			"item": [
+				{
+					"name": "Get all series",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/series",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"series"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new serie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Friends\",\n    \"synopsis\": \"Uma serie de comedia\",\n    \"posterPath\": \"assets/series/911.jpg\",\n    \"genres\": [\"comedy\", \"romance\"],\n    \"streamingPlatforms\": [\"netflix\", \"appletv\"],\n    \"cast\": [\"Angelina Jolie\"],\n    \"releaseDate\": \"Dec 6, 2024\",\n    \"isWatched\": false,\n    \"imdbRating\": 8,\n    \"seasons\": [{\n      \"seasonNumber\": 3,\n      \"episodes\": [{\n        \"title\": \"The Pilot\",\n        \"duration\": 40,\n        \"synopsis\": \"Primeiro episodio da temporada\",\n        \"releaseDate\": \"Dec 7, 2024\"\n      }]\n    }]\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/series",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"series"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a serie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/series/34234234324",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"series",
+								"34234234324"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a review to a serie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"24234324\",\n    \"comment\": \"Excelente serie! Recomendo assistir nas ferias!\",\n    \"rating\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/series/2342342342342/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"series",
+								"2342342342342",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "### Get All Series\n\nThe **GET** `/api/series` endpoint returns all added series in an array.\n\nResponse example:\n\n``` json\n[\n    {\n        \"_id\": \"6770765953791666f2cd840e\",\n        \"title\": \"Friends\",\n        \"synopsis\": \"Uma serie de comedia\",\n        \"posterPath\": \"assets/series/911.jpg\",\n        \"genres\": [\n            \"comedy\",\n            \"romance\"\n        ],\n        \"streamingPlatforms\": [\n            \"netflix\",\n            \"appletv\"\n        ],\n        \"cast\": [\n            \"Angelina Jolie\"\n        ],\n        \"releaseDate\": \"2024-12-06T00:00:00.000Z\",\n        \"isWatched\": false,\n        \"imdbRating\": 8,\n        \"seasons\": [\n            {\n                \"seasonNumber\": 3,\n                \"episodes\": [\n                    {\n                        \"title\": \"The Pilot\",\n                        \"duration\": 40,\n                        \"synopsis\": \"Primeiro episodio da temporada\",\n                        \"releaseDate\": \"2024-12-07T00:00:00.000Z\",\n                        \"_id\": \"6770765953791666f2cd8410\"\n                    }\n                ],\n                \"_id\": \"6770765953791666f2cd840f\"\n            }\n        ],\n        \"reviews\": [],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67707c5253791666f2cd8420\",\n        \"title\": \"Friends\",\n        \"synopsis\": \"Uma serie de comedia\",\n        \"posterPath\": \"assets/series/911.jpg\",\n        \"genres\": [\n            \"comedy\",\n            \"romance\"\n        ],\n        \"streamingPlatforms\": [\n            \"netflix\",\n            \"appletv\"\n        ],\n        \"cast\": [\n            \"Angelina Jolie\"\n        ],\n        \"releaseDate\": \"2024-12-06T00:00:00.000Z\",\n        \"isWatched\": false,\n        \"imdbRating\": 8,\n        \"seasons\": [\n            {\n                \"seasonNumber\": 3,\n                \"episodes\": [\n                    {\n                        \"title\": \"The Pilot\",\n                        \"duration\": 40,\n                        \"synopsis\": \"Primeiro episodio da temporada\",\n                        \"releaseDate\": \"2024-12-07T00:00:00.000Z\",\n                        \"_id\": \"67707c5253791666f2cd8422\"\n                    }\n                ],\n                \"_id\": \"67707c5253791666f2cd8421\"\n            }\n        ],\n        \"reviews\": [],\n        \"__v\": 0\n    }\n]\n\n ```\n\nThe **POST** `/api/series` endpoint creates a new serie. The `id` is automatically generated.\n\nBody example:\n\n``` json\n{\n    \"title\": \"Friends\",\n    \"synopsis\": \"Uma serie de comedia\",\n    \"posterPath\": \"assets/series/911.jpg\",\n    \"genres\": [\"comedy\", \"romance\"],\n    \"streamingPlatforms\": [\"netflix\", \"appletv\"],\n    \"cast\": [\"Angelina Jolie\"],\n    \"releaseDate\": \"Dec 6, 2024\",\n    \"isWatched\": false,\n    \"imdbRating\": 8,\n    \"seasons\": [{\n      \"seasonNumber\": 3,\n      \"episodes\": [{\n        \"title\": \"The Pilot\",\n        \"duration\": 40,\n        \"synopsis\": \"Primeiro episodio da temporada\",\n        \"releaseDate\": \"Dec 7, 2024\"\n      }]\n    }]\n  }\n\n ```\n\nThe **PUT** `/api/series/:id` endpoint edit a series id to the Series object.\n\nThe payload should look like this:\n\n``` json\n{\n    \"posterPath\": \"assets/series/911.jpg\"\n}\n\n ```\n\nThe **DELETE** `/api/series/:id` endpoint removes a serie by id.\n\nPossible responses:\n\nIf successful:\n\n``` json\n`\n{\n    \"message\": \"Serie deleted successfully\",\n}\n\n ```\n\nIf error:\n\n``` json\n`\n{\n    \"message\": \"Error deleting Serie\",\n}\n\n ```\n\nIf id not found:\n\n``` json\n`\n{\n    \"message\": \"Serie not found\",\n}\n\n ```"
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Add new review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movieId\": \"677066d853791666f2cd8406\",\n    \"userId\": \"67707d3353791666f2cd8425\",\n    \"comment\": \"Filme sensacional! Recomendo!\",\n    \"rating\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get review by movie id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/movies/677066d853791666f2cd8406/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"movies",
+								"677066d853791666f2cd8406",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get review by user id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzcwN2QzMzUzNzkxNjY2ZjJjZDg0MjUiLCJlbWFpbCI6Im1hcmlhZG9lMUBlbWFpbC5jb20iLCJpYXQiOjE3MzU0MjU0NDAsImV4cCI6MTczNTQyOTA0MH0.g91FhqU3KXKpjwHM481V_Va4uTuUxzIc5i7LR-K_q8E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/users/67707d3353791666f2cd8425/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"67707d3353791666f2cd8425",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzcxOWVjN2VmZTZhYWRiNTBmOTk1M2YiLCJlbWFpbCI6Im1hcmlhZG9lM0BlbWFpbC5jb20iLCJpYXQiOjE3MzU0OTk0NzEsImV4cCI6MTczNTUwMzA3MX0.YknJa_CaSYJlzbcggTejtKQpJ7IyLFdriUdhJERpgCU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/reviews/677078da53791666f2cd8419\n\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"reviews",
+								"677078da53791666f2cd8419\n\n"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "### Post add New Review\n\nThe **POST** `/api/reviews` adds a new movie review based on an user id.\n\nBody example:\n\n``` json\n{\n    \"movieId\": \"677066d853791666f2cd8406\",\n    \"userId\": \"677067f453791666f2cd840b\",\n    \"comment\": \"Filme sensacional! Recomendo!\",\n    \"rating\": 4\n}\n\n ```\n\nThe **GET Review by Movie id** `/api/reviews` endpoint returns all user reviews based on a movie id.  \nResponse example:\n\n``` json\n[\n    {\n        \"_id\": \"677078da53791666f2cd8419\",\n        \"movie\": \"677066d853791666f2cd8406\",\n        \"user\": {\n            \"_id\": \"677067f453791666f2cd840b\",\n            \"name\": \"Maria Doe\",\n            \"email\": \"mariadoe2@email.com\"\n        },\n        \"comment\": \"Filme sensacional! Recomendo!\",\n        \"rating\": 4,\n        \"createdAt\": \"2024-12-28T22:16:58.857Z\",\n        \"__v\": 0\n    }\n]\n\n ```\n\nThe **GET review by User id** /api/reviews endpoint returns all reviews made by a user.\n\nResponse example:\n\n``` json\n[\n    {\n        \"_id\": \"67707ec953791666f2cd8435\",\n        \"movie\": {\n            \"_id\": \"677066d853791666f2cd8406\",\n            \"title\": \"Transformers 2\"\n        },\n        \"user\": \"67707d3353791666f2cd8425\",\n        \"comment\": \"Filme sensacional! Recomendo!\",\n        \"rating\": 4,\n        \"createdAt\": \"2024-12-28T22:42:17.246Z\",\n        \"__v\": 0\n    }\n]\n\n ```\n\nThe **DELETE** /api/reviews endpoint removes a review made by users.\n\nExample of a successfully response:\n\n``` json\n{\n    \"message\": \"Review deleted successfully\",\n    \"deletedReview\": {\n        \"_id\": \"677078da53791666f2cd8419\",\n        \"movie\": \"677066d853791666f2cd8406\",\n        \"user\": \"677067f453791666f2cd840b\",\n        \"comment\": \"Filme sensacional! Recomendo!\",\n        \"rating\": 4,\n        \"createdAt\": \"2024-12-28T22:16:58.857Z\",\n        \"__v\": 0\n    }\n}\n\n ```\n\n**\n\nPOST /reviews**\n\n[http://localhost:3001/api/reviews](http://localhost:3001/api/reviews)\n\n**GET /reviews**\n\nBy User:\n\n[http://localhost:3001/api/users/:id/reviews](http://localhost:3001/api/users/:id/reviews)\n\nBy Movie:\n\n[http://localhost:3001/api/movies/:id/reviews](http://localhost:3001/api/movies/:id/reviews)"
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://farming-simulator.pstmn.io"
+		}
+	]
+}

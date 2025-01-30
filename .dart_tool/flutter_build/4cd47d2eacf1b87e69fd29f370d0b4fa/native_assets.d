@@ -1,0 +1,1 @@
+ C:\\Users\\Marta\\Documents\\DTAM\\Ano2-Sem1\\Proj_Interdisciplinar\\flutter_movieseriestracker\\.dart_tool\\flutter_build\\4cd47d2eacf1b87e69fd29f370d0b4fa\\native_assets.yaml: 
